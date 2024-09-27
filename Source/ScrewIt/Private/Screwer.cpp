@@ -20,7 +20,7 @@ static void DiscoverSubclassesOf(TSet<FTopLevelAssetPath>& out_AllClasses, UClas
 	GetDerivedClasses(BaseClass, NativeRootClasses);
 	NativeRootClasses.Add(BaseClass);
 
-	const auto predicate = [](const UClass* RootClass) { return RootClass and RootClass->HasAnyClassFlags(CLASS_Native); };
+	const auto predicate = [](const UClass* RootClass) { return RootClass && RootClass->HasAnyClassFlags(CLASS_Native); };
 	const auto transform = &UClass::GetClassPathName;
 	Algo::TransformIf(NativeRootClasses, NativeRootClassPaths, predicate, transform);
 

@@ -32,12 +32,12 @@
 
 void UScrewItRootInstance::ScrewOneTapeData(const TSubclassOf<UFGTapeData>& TapeDataClass)
 {
-	if (not TapeDataClass) {
+	if (!TapeDataClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr TapeDataClass"));
 		return;
 	}
 	UFGTapeData* TapeDataCDO = TapeDataClass.GetDefaultObject();
-	if (not TapeDataCDO) {
+	if (!TapeDataCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("TapeDataClass %s has nullptr CDO"), *TapeDataClass->GetName());
 		return;
 	}
@@ -51,7 +51,7 @@ void UScrewItRootInstance::ScrewOneTapeData(const TSubclassOf<UFGTapeData>& Tape
 
 void UScrewItRootInstance::ScrewOneUnlock(UFGUnlock* Unlock)
 {
-	if (not Unlock) {
+	if (!Unlock) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr Unlock"));
 		return;
 	}
@@ -110,12 +110,12 @@ void UScrewItRootInstance::ScrewOneUnlock(UFGUnlock* Unlock)
 }
 void UScrewItRootInstance::ScrewOneBuilding(const TSubclassOf<AFGBuildable>& BuildableClass)
 {
-	if (not BuildableClass) {
+	if (!BuildableClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr BuildableClass"));
 		return;
 	}
 	AFGBuildable* BuildableCDO = BuildableClass.GetDefaultObject();
-	if (not BuildableCDO) {
+	if (!BuildableCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("BuildableClass %s has nullptr CDO"), *BuildableClass->GetName());
 		return;
 	}
@@ -127,12 +127,12 @@ void UScrewItRootInstance::ScrewOneBuilding(const TSubclassOf<AFGBuildable>& Bui
 
 void UScrewItRootInstance::ScrewOneVehicle(const TSubclassOf<AFGVehicle>& VehicleClass)
 {
-	if (not VehicleClass) {
+	if (!VehicleClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr VehicleClass"));
 		return;
 	}
 	AFGVehicle* VehicleCDO = VehicleClass.GetDefaultObject();
-	if (not VehicleCDO) {
+	if (!VehicleCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("VehicleClass %s has nullptr CDO"), *VehicleClass->GetName());
 		return;
 	}
@@ -147,12 +147,12 @@ void UScrewItRootInstance::ScrewOneVehicle(const TSubclassOf<AFGVehicle>& Vehicl
 void UScrewItRootInstance::ScrewOneItem(const FSoftObjectPath& Path)
 {
 	const TSubclassOf<UFGItemDescriptor> ItemClass = TSoftClassPtr<UFGItemDescriptor>(Path).Get();
-	if (not ItemClass) {
+	if (!ItemClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr ItemClass"));
 		return;
 	}
 	UFGItemDescriptor* ItemCDO = ItemClass.GetDefaultObject();
-	if (not ItemCDO) {
+	if (!ItemCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("ItemClass %s has nullptr CDO"), *ItemClass->GetName());
 		return;
 	}
@@ -187,12 +187,12 @@ void UScrewItRootInstance::ScrewOneItem(const FSoftObjectPath& Path)
 void UScrewItRootInstance::ScrewOneRecipe(const FSoftObjectPath& Path)
 {
 	const TSubclassOf<UFGRecipe> RecipeClass = TSoftClassPtr<UFGRecipe>(Path).Get();
-	if (not RecipeClass) {
+	if (!RecipeClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr RecipeClass"));
 		return;
 	}
 	UFGRecipe* RecipeCDO = RecipeClass.GetDefaultObject();
-	if (not RecipeCDO) {
+	if (!RecipeCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("RecipeClass %s has nullptr CDO"), *RecipeClass->GetName());
 		return;
 	}
@@ -206,12 +206,12 @@ void UScrewItRootInstance::ScrewOneRecipe(const FSoftObjectPath& Path)
 void UScrewItRootInstance::ScrewOneCategory(const FSoftObjectPath& Path)
 {
 	const TSubclassOf<UFGCategory> CategoryClass = TSoftClassPtr<UFGCategory>(Path).Get();
-	if (not CategoryClass) {
+	if (!CategoryClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr CategoryClass"));
 		return;
 	}
 	UFGCategory* CategoryCDO = CategoryClass.GetDefaultObject();
-	if (not CategoryCDO) {
+	if (!CategoryCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("CategoryClass %s has nullptr CDO"), *CategoryClass->GetName());
 		return;
 	}
@@ -224,12 +224,12 @@ void UScrewItRootInstance::ScrewOneCategory(const FSoftObjectPath& Path)
 void UScrewItRootInstance::ScrewOneSchematic(const FSoftObjectPath& Path)
 {
 	const TSubclassOf<UFGSchematic> SchematicClass = TSoftClassPtr<UFGSchematic>(Path).Get();
-	if (not SchematicClass) {
+	if (!SchematicClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr SchematicClass"));
 		return;
 	}
 	UFGSchematic* SchematicCDO = SchematicClass.GetDefaultObject();
-	if (not SchematicCDO) {
+	if (!SchematicCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("SchematicClass %s has nullptr CDO"), *SchematicClass->GetName());
 		return;
 	}
@@ -246,12 +246,12 @@ void UScrewItRootInstance::ScrewOneSchematic(const FSoftObjectPath& Path)
 void UScrewItRootInstance::ScrewOneEmote(const FSoftObjectPath& Path)
 {
 	const TSubclassOf<UFGEmote> EmoteClass = TSoftClassPtr<UFGEmote>(Path).Get();
-	if (not EmoteClass) {
+	if (!EmoteClass) {
 		UE_LOG(LogScrewIt, Error, TEXT("Got nullptr EmoteClass"));
 		return;
 	}
 	UFGEmote* EmoteCDO = EmoteClass.GetDefaultObject();
-	if (not EmoteCDO) {
+	if (!EmoteCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("EmoteClass %s has nullptr CDO"), *EmoteClass->GetName());
 		return;
 	}
@@ -266,7 +266,7 @@ void UScrewItRootInstance::DispatchLifecycleEvent(ELifecyclePhase Phase)
 	Super::DispatchLifecycleEvent(Phase);
 
 	ScrewCDO = ScrewClass.GetDefaultObject();
-	if (not ScrewCDO) {
+	if (!ScrewCDO) {
 		UE_LOG(LogScrewIt, Error, TEXT("Screw class CDO is nullptr, bailing out"));
 		return;
 	}
