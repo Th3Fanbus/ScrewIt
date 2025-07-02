@@ -43,6 +43,6 @@ void FScrewer::Screw()
 			Invoke(HandlerFunc, Path);
 		}
 		const double End = FPlatformTime::Seconds();
-		UE_LOG(LogScrewIt, Display, TEXT("Done screwing '%s' in %f ms"), *BaseClass->GetName(), (Mid - Begin) * 1000);
+		UE_LOG(LogScrewIt, Display, TEXT("Done screwing '%s' in %f ms"), *BaseClass->GetName(), (End - Begin) * 1000);
 	}, FStreamableManager::DefaultAsyncLoadPriority); // AsyncLoadHighPriority
 }
